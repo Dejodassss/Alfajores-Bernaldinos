@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8f1022">
+  <meta name="description" content="Carta online de Alfajores Bernaldinos. Una delicia para ti.">
+  <title>Alfajores Bernaldinos | Carta online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <div class="top-ribbon"><span>♥</span> Hechos con cariño, para compartir <span>♥</span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Alfajores Bernaldinos, inicio">
+      <img src="images/logo.png" alt="Logo de Alfajores Bernaldinos" class="brand-logo">
+      <span class="brand-copy"><strong>Alfajores<br>Bernaldinos</strong><small>Una delicia para ti</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#carta">Nuestra carta</a>
+      <a href="#nosotros">Nuestra esencia</a>
+      <a class="nav-order" href="#pedidos">Haz tu pedido <span>↗</span></a>
+    </nav>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">♥</div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Un antojito hecho con amor <span></span></p>
+        <h1>Un dulce momento<br><em>se comparte</em></h1>
+        <p class="hero-description">Pequeños bocados, grandes sonrisas. Descubre el sabor de nuestros alfajores y encuentra tu favorito.</p>
+        <a class="hero-cta" href="#carta">Ver nuestros alfajores <span>↓</span></a>
+        <div class="hero-note"><span class="note-heart">♥</span><span>Suaves, rellenos y<br>¡deliciosos!</span></div>
+      </div>
+      <div class="hero-art reveal">
+        <div class="hero-halo"></div>
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="images/hero-photo.jpg" alt="Alfajores Bernaldinos">
+        </div>
+        <div class="hero-sticker"><span>♥</span><b>Una delicia<br>para ti</b><span>♥</span></div>
+        <div class="hero-caption">El sabor que<br><strong>enamora</strong></div>
+        <span class="floating-cookie cookie-a">✿</span><span class="floating-cookie cookie-b">♥</span>
+      </div>
+      <div class="hero-bottom-wave"></div>
+    </section>
+
+    <section class="menu-section" id="carta">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Recién hechos para ti</span>
+        <h2>Nuestra <em>carta</em></h2>
+        <p>Elige tu favorito y déjate conquistar por cada mordida.</p>
+        <div class="heading-flourish">〰 ♥ 〰</div>
+      </div>
+
+      <div class="product-list">
+        <article class="product product-classic reveal">
+          <div class="product-visual">
+            <span class="product-number">01</span>
+            <div class="photo-blob"><img src="images/clasico.jpg" alt="Alfajor Clásico"></div>
+            <span class="product-doodle">✦</span>
+          </div>
+          <div class="product-info">
+            <span class="product-tag">El favorito de siempre</span>
+            <h3>Clásico</h3>
+            <p>Suave, delicado y generosamente relleno de manjar. La tradición que siempre provoca.</p>
+            <div class="product-buy"><strong class="price">S/ 2.00</strong><button class="order-product" data-product="Clásico">Pedir este <span>↗</span></button></div>
+          </div>
+        </article>
+
+        <article class="product product-chocolate reveal">
+          <div class="product-visual">
+            <img src="images/chocolate.jpg" alt="Alfajor de Chocolate" class="photo-blob">
+            <span class="product-number">02</span>
+          </div>
+          <div class="product-info">
+            <span class="product-tag">Para los chocolateros</span>
+            <h3>De chocolate</h3>
+            <p>Una cobertura intensa que abraza un relleno suave. Un gustito irresistible.</p>
+            <div class="product-buy"><strong class="price">S/ 2.00</strong><button class="order-product" data-product="De chocolate">Pedir este <span>↗</span></button></div>
+          </div>
+        </article>
+
+        <article class="product product-passion reveal">
+          <div class="product-visual">
+            <span class="product-number">03</span>
+            <div class="photo-blob"><img src="images/maracuya.jpg" alt="Alfajor de Maracuyá"></div>
+            <span class="product-doodle">✿</span>
+          </div>
+          <div class="product-info">
+            <span class="product-tag">Un toque tropical</span>
+            <h3>De maracuyá</h3>
+            <p>Una cubierta dulce con ese toque frutal que le da personalidad a cada bocado.</p>
+            <div class="product-buy"><strong class="price">S/ 2.00</strong><button class="order-product" data-product="De maracuyá">Pedir este <span>↗</span></button></div>
+          </div>
+        </article>
+
+        <article class="product product-coconut reveal">
+          <div class="product-visual">
+            <span class="product-number">04</span>
+            <div class="photo-blob"><img src="images/coco.jpg" alt="Alfajor de Coco"></div>
+            <span class="product-doodle">♡</span>
+          </div>
+          <div class="product-info">
+            <span class="product-tag">Dulzura tropical</span>
+            <h3>De coco</h3>
+            <p>El toque especial del coco rallado junto a la suavidad de nuestro alfajor.</p>
+            <div class="product-buy"><strong class="price">S/ 2.00</strong><button class="order-product" data-product="De coco">Pedir este <span>↗</span></button></div>
+          </div>
+        </article>
+      </div>
+      <p class="menu-footnote">* Precio por unidad. Consulta disponibilidad al realizar tu pedido.</p>
+    </section>
+
+    <section class="brand-story" id="nosotros">
+      <div class="story-decoration">♡</div>
+      <div class="story-inner reveal">
+        <div class="story-logo"><img src="images/hero-photo.jpg" alt=""></div>
+          <span class="section-kicker">Nuestra esencia</span>
+          <h2>Un detalle dulce,<br><em>hecho con cariño.</em></h2>
+          <p>En Alfajores Bernaldinos creemos que los momentos sencillos también merecen algo delicioso. Por eso, cada alfajor está pensado para compartir, regalar o darte ese gustito que alegra el día.</p>
+          <div class="story-signature">¡Una delicia para ti! <span>♥</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-section" id="pedidos">
+      <div class="order-swirls">✦　♥　✦</div>
+      <span class="section-kicker">¿Se te antojó?</span>
+      <h2>Tu próximo alfajor<br><em>está a un mensaje</em></h2>
+      <p>Escríbenos por WhatsApp y haz tu pedido.</p>
+      <a class="whatsapp-cta" href="https://wa.me/51956732186?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20Alfajores%20Bernaldinos." target="_blank" rel="noopener">
+        <span class="wa-icon">◔</span> Pedir por WhatsApp <span class="arrow">↗</span>
+      </a>
+      <small>WhatsApp · 956 732 186</small>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="#inicio" class="footer-brand">Alfajores <em>Bernaldinos</em></a>
+    <p>Una delicia para ti ♥</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/search/top?q=alfajores%20bernaldinos" target="_blank" rel="noopener">Facebook</a>
+      <span>·</span>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <small>© <span id="year"></span> Alfajores Bernaldinos</small>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/51956732186?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20Alfajores%20Bernaldinos." target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">☏</a>
+  <script src="script.js"></script>
+</body>
+</html>

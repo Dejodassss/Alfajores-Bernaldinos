@@ -1,0 +1,464 @@
+/* ALFAJORES BERNALDINOS · Carta online */
+:root{
+  --wine:#8f1022;--red:#b9142b;--red-dark:#650b1b;--cream:#fff8e8;
+  --paper:#fffdf6;--gold:#f4c735;--gold-deep:#d99d17;--brown:#4d211b;
+  --text:#512923;--muted:#8d6258;--shadow:0 22px 55px rgba(91,27,25,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:"Nunito",sans-serif;color:var(--text);background:var(--paper);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.top-ribbon{height:32px;background:var(--wine);color:#ffe9a2;text-align:center;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:16px}
+.top-ribbon span{color:var(--gold);font-size:13px}
+.site-header{height:92px;padding:0 clamp(22px,7vw,110px);display:flex;align-items:center;justify-content:space-between;background:rgba(255,253,246,.94);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(143,16,34,.08);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand img{width:68px;height:68px;object-fit:contain}
+.brand-copy{display:flex;flex-direction:column;line-height:.96}
+.brand-copy strong{font-family:"Baloo 2",sans-serif;font-size:21px;font-weight:800;color:var(--wine)}
+.brand-copy small{font-family:"Pacifico",cursive;color:#a36c2c;font-size:11px;margin-top:5px}
+.main-nav{display:flex;align-items:center;gap:38px;font-size:13px;font-weight:800;color:#6f3b34}
+.main-nav a{transition:color .25s}
+.main-nav a:hover{color:var(--red)}
+.main-nav .nav-order{background:var(--wine);color:#fff5dc;padding:13px 21px;border-radius:30px 30px 30px 8px;box-shadow:0 7px 18px #8f102229}
+.nav-order span{color:var(--gold);margin-left:9px}
+.menu-toggle{display:none;border:0;background:none;color:var(--wine);font-size:25px}
+.hero{min-height:620px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:70px clamp(26px,10vw,155px) 105px;background:radial-gradient(ellipse at 80% 46%,#ffe9b4 0,transparent 38%),linear-gradient(118deg,#fff8e8 0%,#fff3d9 52%,#fce8b9 100%)}
+.hero:before{content:"";position:absolute;width:540px;height:540px;border:1px solid #e9bd5a66;border-radius:48% 52% 62% 38%;right:-90px;top:-190px;transform:rotate(25deg)}
+.hero:after{content:"";position:absolute;width:320px;height:320px;border:1px dashed #dba63877;border-radius:50%;left:-190px;bottom:12px}
+.hero-copy{position:relative;z-index:2;max-width:530px;padding-bottom:12px}
+.eyebrow,.section-kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:900;color:#a36b31}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.eyebrow span{width:25px;height:1px;background:var(--gold-deep)}
+.hero h1{font-family:"Baloo 2",sans-serif;font-size:clamp(48px,6vw,82px);line-height:.91;letter-spacing:-2px;color:var(--wine);font-weight:800}
+.hero h1 em,.section-heading h2 em,.story-copy h2 em,.order-section h2 em{font-family:"Pacifico",cursive;font-style:normal;color:#c58a24;font-weight:400}
+.hero-description{font-size:16px;line-height:1.8;color:#79534a;max-width:390px;margin:24px 0 29px}
+.hero-cta{display:inline-flex;align-items:center;gap:28px;background:var(--wine);color:#fff7e5;border-radius:30px 30px 30px 8px;padding:16px 23px;font-size:13px;font-weight:900;box-shadow:0 12px 25px #8f10222c;transition:transform .25s,box-shadow .25s}
+.hero-cta:hover,.whatsapp-cta:hover{transform:translateY(-4px);box-shadow:0 16px 28px #8f10223d}
+.hero-cta span{color:var(--gold);font-size:20px}
+.hero-note{display:flex;align-items:center;gap:12px;margin:32px 0 0 5px;color:#946c4c;font-size:11px;font-weight:800;line-height:1.35}
+.note-heart{width:34px;height:34px;display:grid;place-items:center;background:#f7d66d;border-radius:50%;color:var(--wine);font-size:17px}
+.hero-art{height:440px;position:relative;display:grid;place-items:center;z-index:1}
+.hero-halo{position:absolute;width:min(35vw,410px);height:min(35vw,410px);border-radius:50%;background:#f4cb6d;box-shadow:0 0 0 15px #f4cb6d38,0 0 0 34px #f4cb6d1f}
+.hero-photo-wrap{width:min(34vw,390px);height:min(34vw,390px);border-radius:50% 48% 44% 56%/48% 42% 58% 52%;overflow:hidden;transform:rotate(5deg);border:10px solid #fffaf0;box-shadow:0 25px 50px #78351c30;z-index:1}
+.hero-photo{width:100%;height:100%;object-fit:cover;transform:rotate(-5deg) scale(1.08)}
+.hero-sticker{position:absolute;z-index:3;right:2%;top:5%;width:118px;height:118px;border-radius:50%;background:var(--wine);border:5px double #f9d56d;color:#fff5d7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transform:rotate(11deg);box-shadow:0 10px 24px #7e1c2730;text-align:center}
+.hero-sticker b{font-family:"Baloo 2";font-size:16px;line-height:1.05}.hero-sticker span{color:var(--gold);font-size:14px}
+.hero-caption{position:absolute;z-index:4;bottom:0;left:0;background:var(--cream);padding:13px 23px 15px;border-radius:50% 44% 48% 12%/28% 40% 38% 55%;font-family:"Pacifico";font-size:19px;line-height:1.25;color:var(--wine);box-shadow:var(--shadow);transform:rotate(-7deg)}
+.hero-caption strong{color:#c18a21;font-weight:400}
+.floating-cookie{position:absolute;color:var(--red);font-size:35px;animation:float 4s ease-in-out infinite}
+.cookie-a{top:12%;left:3%}.cookie-b{right:2%;bottom:17%;font-size:30px;animation-delay:1.3s}
+.hero-spark{position:absolute;color:#d99d17;font-size:30px}.spark-one{top:16%;left:49%}.spark-two{bottom:21%;left:5%;color:#b9142b}
+.hero-bottom-wave{position:absolute;bottom:-2px;left:-3%;width:106%;height:55px;background:var(--paper);border-radius:50% 50% 0 0/65% 65% 0 0}
+.menu-section{padding:85px clamp(22px,10vw,150px) 105px;background:var(--paper);position:relative}
+.section-heading{text-align:center;margin-bottom:48px}
+.section-heading h2{font-family:"Baloo 2";font-size:clamp(43px,5vw,62px);line-height:1.05;color:var(--wine);margin-top:9px}
+.section-heading h2 em{color:#c18a21}
+.section-heading p{color:#8a6258;font-size:14px;margin-top:10px}
+.heading-flourish{font-family:"Pacifico";color:#d9a12b;font-size:21px;margin-top:8px}
+.product-list{max-width:1060px;margin:auto;display:flex;flex-direction:column;gap:26px}
+.product{display:grid;grid-template-columns: minmax(260px, .88fr) 1.12fr;align-items:center;gap:clamp(30px,6vw,85px);padding:24px 5%;position:relative;min-height:290px;border-bottom:1px dashed #dcbf8b}
+.product:nth-child(even){grid-template-columns:1.12fr minmax(260px,.88fr)}
+.product:nth-child(even) .product-visual{order:2}
+.product:nth-child(even) .product-info{order:1}
+.product-visual{height:250px;position:relative;display:grid;place-items:center}
+.photo-blob{width:230px;height:220px;overflow:hidden;border-radius:56% 44% 53% 47%/44% 48% 52% 56%;background:#f7e3b9;box-shadow:0 14px 32px #70321d20;transform:rotate(-4deg);border:7px solid #fff8e9;transition:transform .5s cubic-bezier(.2,.8,.2,1),border-radius .5s}
+.product:nth-child(even) .photo-blob{transform:rotate(5deg);border-radius:44% 56% 42% 58%/55% 43% 57% 45%}
+.photo-blob img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.product:hover .photo-blob{transform:rotate(0) scale(1.04);border-radius:48%}
+.product:hover .photo-blob img{transform:scale(1.1)}
+.product-number{position:absolute;top:5px;left:10%;font-family:"Pacifico";font-size:23px;color:#d7a02e;opacity:.8}
+.product:nth-child(even) .product-number{left:auto;right:10%}
+.product-doodle{position:absolute;right:12%;top:13%;color:#dba52d;font-size:27px;animation:twinkle 3s ease-in-out infinite}
+.product:nth-child(even) .product-doodle{right:auto;left:9%}
+.product-info{max-width:460px}
+.product-tag{display:inline-block;color:#a56b34;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-weight:900;border-bottom:1px solid #e8c46c;padding-bottom:6px}
+.product-info h3{font-family:"Baloo 2";font-size:clamp(32px,4vw,45px);line-height:1;color:var(--wine);margin:10px 0}
+.product-info p{font-size:14px;line-height:1.8;color:#85645a;max-width:390px}
+.product-buy{display:flex;align-items:center;gap:25px;margin-top:22px}
+.price{font-family:"Baloo 2";font-size:26px;color:#a56b1e}
+.order-product{border:0;background:transparent;color:var(--wine);font-size:12px;font-weight:900;border-bottom:1px solid #bd7f2b;padding:8px 0;cursor:pointer;transition:gap .2s}
+.order-product span{color:#d29b2b;margin-left:9px;font-size:17px}
+.order-product:hover{color:#cf8e17}
+.menu-footnote{text-align:center;color:#a98a7a;font-size:11px;margin-top:35px}
+.brand-story{background:#fff0d2;position:relative;padding:70px 9%;overflow:hidden}
+.brand-story:before,.brand-story:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #e7c47788;border-radius:50%}
+.brand-story:before{left:-120px;top:-100px}.brand-story:after{right:-120px;bottom:-150px}
+.story-inner{max-width:960px;margin:auto;display:grid;grid-template-columns:280px 1fr;align-items:center;gap:70px;position:relative;z-index:1}
+.story-logo{width:250px;height:250px;border-radius:50%;background:#fffaf0;display:grid;place-items:center;box-shadow:0 20px 40px #7d3d1b1c;border:7px solid #f3d17b}
+.story-logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.story-copy h2{font-family:"Baloo 2";font-size:clamp(34px,4vw,49px);line-height:1.05;color:var(--wine);margin:12px 0}
+.story-copy h2 em{color:#c18a21}
+.story-copy p{font-size:14px;line-height:1.9;color:#79564d;max-width:520px}
+.story-signature{font-family:"Pacifico";font-size:20px;color:var(--wine);margin-top:20px}
+.story-signature span{color:#d99d17;margin-left:6px}
+.story-decoration{position:absolute;right:10%;top:7%;font-size:70px;color:#e5bf65;transform:rotate(18deg)}
+.order-section{text-align:center;padding:85px 20px 90px;background:var(--wine);color:#fff5df;position:relative;overflow:hidden}
+.order-section:before,.order-section:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #f6d36b55;border-radius:50%}
+.order-section:before{left:-150px;top:-170px}.order-section:after{right:-130px;bottom:-190px}
+.order-section .section-kicker{color:#f4cf6d}
+.order-section h2{font-family:"Baloo 2";font-size:clamp(38px,5vw,58px);line-height:1.04;margin:12px 0}
+.order-section h2 em{color:#f4cf6d}
+.order-section p{font-size:14px;color:#f5d9c1;margin-bottom:25px}
+.whatsapp-cta{display:inline-flex;align-items:center;gap:14px;background:#f8d76c;color:#5c241b;padding:16px 27px;border-radius:35px 35px 35px 9px;font-size:14px;font-weight:900;box-shadow:0 10px 25px #39030e55;transition:transform .25s,box-shadow .25s}
+.wa-icon{width:25px;height:25px;border:2px solid #5c8f42;border-radius:50%;display:grid;place-items:center;color:#5c8f42;font-size:17px}
+.whatsapp-cta .arrow{font-size:19px}
+.order-section small{display:block;margin-top:15px;color:#e8b6a8;font-size:11px;letter-spacing:1px}
+.order-swirls{color:#f5ce63;font-size:17px;letter-spacing:5px;margin-bottom:20px}
+.site-footer{text-align:center;background:#fff9eb;padding:35px 20px 27px;color:#956d5c}
+.footer-brand{font-family:"Baloo 2";font-size:23px;font-weight:800;color:var(--wine)}
+.footer-brand em{font-family:"Pacifico";font-weight:400;color:#c18a21;font-style:normal}
+.site-footer p{font-family:"Pacifico";font-size:13px;margin:3px 0 14px;color:#9a6c40}
+.social-links{display:flex;justify-content:center;gap:12px;font-size:11px;font-weight:800;margin-bottom:17px}
+.social-links a:hover{color:var(--red)}
+.site-footer>small{font-size:10px;color:#b09283}
+.floating-wa{position:fixed;right:22px;bottom:22px;width:54px;height:54px;border-radius:50%;background:#299b59;color:white;display:grid;place-items:center;font-size:27px;z-index:40;box-shadow:0 8px 22px #174b2c45;transition:transform .25s}
+.floating-wa:hover{transform:translateY(-5px) rotate(-8deg)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-13px) rotate(8deg)}}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:.7}50%{transform:scale(1.25) rotate(18deg);opacity:1}}
+@media(max-width:760px){
+ .site-header{height:76px;padding:0 20px}.brand img{width:55px;height:55px}.brand-copy strong{font-size:18px}
+ .menu-toggle{display:block}.main-nav{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#fffaf0;box-shadow:0 14px 22px #45131b1c;flex-direction:column;gap:18px}
+ .main-nav.open{display:flex}.main-nav .nav-order{padding:11px 19px}
+ .hero{grid-template-columns:1fr;padding:65px 26px 82px;min-height:auto;text-align:center}
+ .hero-copy{margin:auto}.eyebrow{justify-content:center}.hero-description{margin:20px auto 25px}.hero-note{justify-content:center}
+ .hero-art{height:340px;margin-top:30px}.hero-halo{width:270px;height:270px}.hero-photo-wrap{width:255px;height:255px}.hero-sticker{width:95px;height:95px;right:3%;top:2%}.hero-sticker b{font-size:13px}
+ .hero-caption{left:3%;bottom:0;font-size:16px}.spark-one{left:10%;top:50%}
+ .menu-section{padding:68px 20px 75px}.section-heading{margin-bottom:24px}
+ .product-list{gap:18px}.product,.product:nth-child(even){grid-template-columns:1fr;gap:5px;padding:22px 8px 27px;text-align:center}
+ .product:nth-child(even) .product-visual,.product:nth-child(even) .product-info{order:initial}
+ .product-visual{height:220px}.photo-blob{width:200px;height:190px}.product-number{left:13%;top:0}.product:nth-child(even) .product-number{right:13%}
+ .product-doodle{right:17%}.product:nth-child(even) .product-doodle{left:15%}
+ .product-info{margin:auto}.product-info p{margin:auto}.product-buy{justify-content:center}
+ .story-inner{grid-template-columns:1fr;text-align:center;gap:26px}.story-logo{width:190px;height:190px;margin:auto}
+ .story-copy p{margin:auto}.story-decoration{font-size:45px;right:5%}
+ .brand-story{padding:60px 24px}.order-section{padding:70px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+ .reveal{opacity:1;transform:none}
+}
+
+/* ===== V2 · Carta compacta, tipografía grande y animaciones ===== */
+body{font-size:18px}
+.top-ribbon{height:38px;font-size:13px;overflow:hidden}
+.site-header{transition:height .35s,box-shadow .35s,background .35s}
+.site-header.is-scrolled{height:72px;box-shadow:0 10px 30px rgba(91,27,25,.12);background:rgba(255,253,246,.98)}
+.site-header.is-scrolled .brand img{width:54px;height:54px}
+.brand img{transition:width .35s,height .35s}
+.brand-copy strong{font-size:24px}.brand-copy small{font-size:13px}
+.main-nav{font-size:16px;gap:34px}
+.main-nav a:not(.nav-order){position:relative;padding:6px 0}
+.main-nav a:not(.nav-order)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--gold-deep);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.main-nav a:not(.nav-order):hover::after,.main-nav a.active::after{transform:scaleX(1)}
+.main-nav .nav-order{font-size:15px;transition:transform .25s,box-shadow .25s}
+.main-nav .nav-order:hover{transform:translateY(-3px);box-shadow:0 12px 22px #8f102240;color:#fff5dc}
+.menu-toggle{font-size:32px}
+.scroll-progress{position:fixed;top:0;left:0;height:4px;width:100%;background:linear-gradient(90deg,var(--gold),var(--red));transform:scaleX(0);transform-origin:left;z-index:100}
+
+/* Hero */
+.hero{min-height:560px;padding-top:54px;padding-bottom:90px}
+.hero-copy{max-width:580px}
+.eyebrow,.section-kicker{font-size:14px;letter-spacing:2.5px}
+.hero h1{font-size:clamp(52px,6.2vw,88px)}
+.hero-description{font-size:20px;max-width:470px;line-height:1.7}
+.hero-cta{font-size:17px;padding:19px 28px;position:relative;overflow:hidden}
+.hero-note{font-size:15px}
+.hero-sticker b{font-size:18px}.hero-caption{font-size:23px}
+.hero-photo-wrap{animation:bob 6s ease-in-out infinite}
+.hero-halo{animation:pulse-ring 4s ease-in-out infinite}
+.hero-sticker{animation:wiggle 5s ease-in-out infinite}
+.hero-copy.reveal>*{opacity:0;transform:translateY(22px)}
+.hero-copy.is-visible>*{animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+.hero-copy.is-visible>*:nth-child(2){animation-delay:.12s}.hero-copy.is-visible>*:nth-child(3){animation-delay:.24s}
+.hero-copy.is-visible>*:nth-child(4){animation-delay:.36s}.hero-copy.is-visible>*:nth-child(5){animation-delay:.48s}
+.hero-cta::before,.whatsapp-cta::before{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.6s ease-in-out infinite}
+.whatsapp-cta{position:relative;overflow:hidden;font-size:18px;padding:19px 32px}
+
+/* Carta: rejilla compacta 2x2 */
+.menu-section{padding:60px clamp(20px,5vw,80px) 70px}
+.section-heading{margin-bottom:34px}
+.section-heading h2{font-size:clamp(48px,5.5vw,70px)}
+.section-heading p{font-size:19px}
+.heading-flourish{font-size:24px}
+.product-list{max-width:1200px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.product,.product:nth-child(even){display:grid;grid-template-columns:190px 1fr;gap:22px;align-items:center;min-height:0;padding:22px 26px;background:#fff;border:1px solid #f0dcae;border-radius:32px;box-shadow:0 10px 30px rgba(91,27,25,.08);overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+.product::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--gold),var(--red));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.product:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(91,27,25,.18);border-color:var(--gold)}
+.product:hover::before{transform:scaleX(1)}
+.product:nth-child(even) .product-visual,.product:nth-child(even) .product-info{order:initial}
+.product-visual{height:190px}
+.photo-blob,.product:nth-child(even) .photo-blob{width:175px;height:170px;border-width:6px}
+.product-number{font-size:26px;left:0;top:0}.product:nth-child(even) .product-number{left:0;right:auto}
+.product-doodle,.product:nth-child(even) .product-doodle{right:0;left:auto;top:6%;font-size:28px}
+.product-info{max-width:none}
+.product-tag{font-size:13px;letter-spacing:1.5px}
+.product-info h3{font-size:clamp(34px,3.4vw,44px);margin:8px 0 6px}
+.product-info p{font-size:17px;line-height:1.55;max-width:none}
+.product-buy{margin-top:14px;gap:18px;flex-wrap:wrap}
+.price{font-size:34px;line-height:1;transition:transform .3s}
+.product:hover .price{transform:scale(1.12) rotate(-3deg)}
+.order-product{font-size:16px;color:#fff5dc;background:var(--wine);border:0;border-radius:26px 26px 26px 8px;padding:12px 20px;position:relative;overflow:hidden;box-shadow:0 8px 18px #8f102230;transition:transform .25s,box-shadow .25s,background .25s}
+.order-product span{color:var(--gold);font-size:19px;display:inline-block;transition:transform .25s}
+.order-product:hover{color:#fff5dc;background:var(--red);transform:translateY(-3px);box-shadow:0 12px 24px #8f102245}
+.order-product:hover span{transform:translate(3px,-3px)}
+.order-product:active{transform:scale(.96)}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
+.menu-footnote{font-size:14px;margin-top:26px}
+
+/* Nosotros / pedido / pie */
+.brand-story{padding:60px 9%}
+.story-copy h2{font-size:clamp(38px,4.2vw,54px)}
+.story-copy p{font-size:18px;line-height:1.75;max-width:560px}
+.story-signature{font-size:24px}
+.story-logo{transition:transform .6s}.story-logo:hover{transform:rotate(8deg) scale(1.05)}
+.story-decoration{animation:float 5s ease-in-out infinite}
+.order-section{padding:70px 20px 75px}
+.order-section h2{font-size:clamp(42px,5.2vw,64px)}
+.order-section p{font-size:19px}.order-section small{font-size:14px}
+.order-swirls{font-size:22px;animation:twinkle 3s ease-in-out infinite}
+.footer-brand{font-size:28px}.site-footer p{font-size:16px}.social-links{font-size:15px}.site-footer>small{font-size:13px}
+.floating-wa{width:62px;height:62px;font-size:30px;animation:wa-pulse 2.4s infinite}
+
+/* Reveal escalonado */
+.product.reveal{transition:opacity .7s ease var(--d,0s),transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+.product.reveal:not(.is-visible){transform:translateY(40px) scale(.97)}
+.product.is-visible .photo-blob{animation:pop .8s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(var(--d,0s) + .15s)}
+
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:rotate(5deg) translateY(0)}50%{transform:rotate(3deg) translateY(-12px)}}
+@keyframes pulse-ring{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes wiggle{0%,100%{transform:rotate(11deg)}50%{transform:rotate(3deg) scale(1.05)}}
+@keyframes shine{0%,60%{left:-80%}100%{left:140%}}
+@keyframes pop{from{transform:scale(.6) rotate(-12deg);opacity:0}to{opacity:1}}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+@keyframes wa-pulse{0%{box-shadow:0 0 0 0 rgba(41,155,89,.55)}70%,100%{box-shadow:0 0 0 20px rgba(41,155,89,0)}}
+
+@media(max-width:1000px){
+ .product-list{grid-template-columns:1fr;max-width:640px}
+}
+@media(max-width:760px){
+ body{font-size:17px}
+ .top-ribbon{font-size:11px;letter-spacing:1px}
+ .main-nav{top:76px;font-size:18px}
+ .hero{padding:44px 22px 70px}.hero-description{font-size:18px}
+ .menu-section{padding:48px 14px 56px}
+ .product,.product:nth-child(even){grid-template-columns:128px 1fr;gap:12px;padding:16px;text-align:left;border-radius:26px}
+ .product-visual{height:130px}.photo-blob,.product:nth-child(even) .photo-blob{width:118px;height:114px;border-width:4px}
+ .product-number{font-size:18px}.product-doodle,.product:nth-child(even) .product-doodle{font-size:20px;right:-2px}
+ .product-info{margin:0}.product-info p{margin:0;font-size:15.5px;line-height:1.45}
+ .product-info h3{font-size:30px}.product-tag{font-size:11px}
+ .product-buy{justify-content:flex-start;gap:12px;margin-top:10px}.price{font-size:28px}
+ .order-product{font-size:15px;padding:10px 16px}
+ .story-copy p{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-copy.reveal>*{opacity:1;transform:none}
+ .product.reveal:not(.is-visible){transform:none}
+}
+
+/* ===== HOVER SUAVE Y FLUIDO (SIN SALTOS TOSCOS) ===== */
+
+/* 1. Botones principales y de pedido */
+.hero-cta,
+.whatsapp-cta,
+.order-product,
+.main-nav .nav-order {
+  transition:
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease,
+    color 0.3s ease;
+  will-change: transform;
+}
+
+.hero-cta:hover,
+.whatsapp-cta:hover,
+.main-nav .nav-order:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.order-product:hover {
+  transform: translateY(-2px) scale(1.035);
+}
+
+.hero-cta:active,
+.whatsapp-cta:active,
+.order-product:active,
+.main-nav .nav-order:active {
+  transform: translateY(0) scale(0.985);
+  transition-duration: 0.14s;
+}
+
+/* Flecha dentro de .order-product */
+.order-product span {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.order-product:hover span {
+  transform: translate(3px, -2px) scale(1.06);
+}
+
+/* 2. Tarjetas de productos (.product) */
+.product,
+.product:nth-child(even) {
+  transition:
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+  will-change: transform;
+}
+
+.product:hover,
+.product:nth-child(even):hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 18px 38px rgba(91, 27, 25, 0.14);
+  border-color: rgba(244, 199, 53, 0.85);
+}
+
+/* 3. Imágenes y blobs dentro de las cards */
+.photo-blob,
+.product:nth-child(even) .photo-blob {
+  transition:
+    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.photo-blob img {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Suavizamos el hover de la card sobre el blob y la foto sin cambiar el border-radius de golpe */
+.product:hover .photo-blob {
+  transform: rotate(-1deg) scale(1.03);
+  box-shadow: 0 16px 30px rgba(112, 50, 29, 0.18);
+}
+
+.product:nth-child(even):hover .photo-blob {
+  transform: rotate(2deg) scale(1.03);
+}
+
+.product:hover .photo-blob img {
+  transform: scale(1.06);
+}
+
+/* Precio dentro de la card: crecimiento sutil y sin rotación brusca */
+.price {
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+
+.product:hover .price {
+  transform: scale(1.05);
+}
+
+/* 4. Logo de "Nosotros" e imagen del héroe */
+.story-logo {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.story-logo:hover {
+  transform: scale(1.04) rotate(3deg);
+  box-shadow: 0 22px 42px rgba(125, 61, 27, 0.22);
+}
+
+.hero-photo-wrap {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.hero-photo {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-art:hover .hero-photo {
+  transform: rotate(-5deg) scale(1.13);
+}
+
+/* 5. Botón flotante de WhatsApp */
+.floating-wa {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.floating-wa:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+
+/* (Se eliminó el bloque que desactivaba las transiciones del hover por "movimiento reducido") */
+
+/* ===== HOVER ULTRA SUAVE: correcciones finales ===== */
+:root { --ease-soft: cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+/* La animación de entrada (pop) usaba fill "both" y bloqueaba la transición del hover.
+   Con "backwards" solo actúa al inicio y luego el hover transiciona libremente. */
+.product.is-visible .photo-blob {
+  animation: pop .8s cubic-bezier(.2,.9,.3,1.3) backwards;
+  animation-delay: calc(var(--d, 0s) + .15s);
+}
+
+/* .product.reveal tenía más especificidad y pisaba las transiciones suaves */
+.product.reveal {
+  transition:
+    opacity .7s ease var(--d, 0s),
+    transform .6s var(--ease-soft),
+    box-shadow .6s var(--ease-soft),
+    border-color .5s ease;
+}
+
+/* Tarjeta: elevación más sutil y lenta */
+.product:hover,
+.product:nth-child(even):hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* El border-radius saltaba de golpe al hacer hover: ahora se anima y es más sutil */
+.photo-blob,
+.product:nth-child(even) .photo-blob {
+  transition:
+    transform .7s var(--ease-soft),
+    border-radius .7s var(--ease-soft),
+    box-shadow .6s var(--ease-soft);
+}
+.photo-blob img { transition: transform .8s var(--ease-soft); }
+.product:hover .photo-blob { border-radius: 52% 48% 50% 50% / 48% 48% 52% 52%; }
+.product:nth-child(even):hover .photo-blob { border-radius: 46% 54% 44% 56% / 53% 45% 55% 47%; }
+
+/* Botones: duración un poco más larga y curva más suave */
+.hero-cta,
+.whatsapp-cta,
+.order-product,
+.main-nav .nav-order {
+  transition:
+    transform .5s var(--ease-soft),
+    box-shadow .5s var(--ease-soft),
+    background-color .45s ease,
+    color .45s ease;
+}
+.hero-cta:hover,
+.whatsapp-cta:hover,
+.main-nav .nav-order:hover { transform: translateY(-2px) scale(1.02); }
+.order-product:hover { transform: translateY(-2px) scale(1.025); }
+.order-product span { transition: transform .5s var(--ease-soft); }
+
+/* Enlaces: transición de color que antes no tenían */
+.main-nav a { transition: color .4s ease; }
+.main-nav a:not(.nav-order)::after { transition: transform .45s var(--ease-soft); }
+.social-links a,
+.footer-brand,
+.brand { transition: color .4s ease, opacity .4s ease; }
+
+/* Resto de elementos interactivos */
+.price { transition: transform .5s var(--ease-soft), color .4s ease; }
+.story-logo { transition: transform .7s var(--ease-soft), box-shadow .6s var(--ease-soft); }
+.hero-photo { transition: transform .8s var(--ease-soft); }
+.floating-wa { transition: transform .5s var(--ease-soft), box-shadow .5s var(--ease-soft); }
+.product::before { transition: transform .7s var(--ease-soft); }
+/* ===== Sin borde/fondo blanco alrededor de las imágenes ===== */
+.hero-photo-wrap{border:0;background:transparent;overflow:hidden}
+.hero-photo{display:block;transform:rotate(-5deg) scale(1.12)}
+.hero-art:hover .hero-photo{transform:rotate(-5deg) scale(1.18)}
+.story-logo{background:transparent;overflow:hidden;padding:0}
+.story-logo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;transition:transform .8s var(--ease-soft)}
+.story-logo:hover img{transform:scale(1.06)}
